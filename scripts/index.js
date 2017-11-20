@@ -18,6 +18,14 @@ var hotel = {
     name: "CareerDevs Innt"
 };
 
+function displayDetails(room) {
+    console.log("hello");
+    console.log(room);
+    document.getElementById("price").innerHTML = hotel.rooms[room].price;
+    document.getElementById("available").innerHTML = hotel.rooms[room].available;
+
+}
+
 //console.log(document.getElementById("label").nodeName); //How to find the nodeName of createElement item
 
 for (var i = 0; i < hotel.rooms.length; i++) {
@@ -28,6 +36,8 @@ for (var i = 0; i < hotel.rooms.length; i++) {
     radioBtn.setAttribute("name", "rooms");
     radioBtn.setAttribute("value", i);
     radioBtn.setAttribute("id", "room" + i);
+    //    radioBtn.onclick = displayDetails(i);
+    radioBtn.setAttribute("onclick", "displayDetails(" + i + ")");
     radioLbl.innerHTML = hotel.rooms[i].name;
     console.log("stop");
 
